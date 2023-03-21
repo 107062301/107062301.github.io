@@ -1,0 +1,228 @@
+#main{
+    background-color: white;
+    border-color: black;
+    border: 5px solid;
+    position: absolute;
+    top: 25px;
+    left: 45px;
+    text-align: right;
+    z-index: 1;
+}
+#d{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 0;
+}
+#tex{
+    position: absolute;
+    z-index: 3;
+}
+#tran{
+    background-color: transparent;
+    border-color: none;
+    border: none;
+    position: absolute;
+    top: 30px;
+    left: 50px;
+    text-align: right;
+    z-index: 2;
+}
+
+#toolbar{
+    background-color: rgb(109, 173, 216);
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 720px;
+}
+#color{
+    background-color: white;
+    position: absolute;
+    top: 75px;
+    right: 20px;
+}
+#co{
+    background-color:  rgb(109, 173, 216);
+    position: absolute;
+    top: 50px;
+    right: 30px;
+}
+#te{
+    position: absolute;
+    top: 110px;
+    left: 25px;
+}
+#xt{
+    position: absolute;
+    top: 260px;
+    left: 25px;
+}
+#te1{
+    position: absolute;
+    top: 110px;
+    left: 85px;
+}
+#xt1{
+    position: absolute;
+    top: 260px;
+    left: 85px;
+}
+#bar{
+    position: absolute;
+    transform: rotate(-90deg);
+    top: 180px;
+    right: 100px;
+}
+#bar2{
+    position: absolute;
+    transform: rotate(-90deg);
+    top: 180px;
+    right: 40px;
+}
+.my-custom-input-label-box input + label {
+	display: inline-block;	
+	width: 60px;
+	height: 30px;
+	cursor: pointer;	
+	background-image: url(pngwave.png);
+}
+.my-custom-input-label-box input[type="checkbox"]:checked + label {
+	background-image: url(pen.png)
+}
+.button{
+    text-align: center;
+    display: inline-block;
+    border-color: black;
+    border: 5px solid;
+}
+#pen{
+    padding: 5px 5px;
+    position: absolute;
+    top: 50px;
+    left: 10px;
+    cursor: url(pngwave.png),pointer;
+    background: rgb(72, 158, 216);
+}
+#era{
+    padding: 5px 5px;
+    position: absolute;
+    top: 50px;
+    right: 80px;
+    cursor: url(er_cursor.png),pointer;
+    background:rgb(72, 158, 216);
+}
+#green{
+    background-color: red;
+    padding: 10px 10px;
+    height: 55px;
+    position: absolute;
+    top: 636px;
+    right: 10px;
+}
+#re{
+    background-color: greenyellow;
+    position: absolute;
+    top:636px;
+    left: 10px;
+}
+#un{
+    background-color: greenyellow;
+    position: absolute;
+    top:670px;
+    left: 10px;
+}
+#circle{
+    padding: 5px 5px;
+    position: absolute;
+    top: 300px;
+    left: 10px;
+    cursor: url(cir.png),pointer;
+    background:rgb(72, 158, 216);
+}
+#rectangle{
+    padding: 5px 5px;
+    position: absolute;
+    top: 365px;
+    left: 10px;
+    cursor: url(rec.png),pointer;
+    background:rgb(72, 158, 216);
+}
+#text{
+    padding: 5px 5px;
+    position: absolute;
+    top: 365px;
+    right: 80px;
+    cursor: text;
+    background:rgb(72, 158, 216);
+}
+#f{
+    position: absolute;
+    font-size: 13px;
+    top: 450px;
+    right: 77px;
+    background:transparent;
+}
+#f2{
+    position: absolute;
+    font-size: 13px;
+    top: 450px;
+    right: 137px;
+    background:transparent;
+}
+#sle{
+    position: absolute;
+    top: 470px;
+    right: 80px;
+}
+#sle2{
+    position: absolute;
+    text-align: right;
+    width: 40px;
+    top: 470px;
+    right: 145px;
+}
+#triangle{
+    padding: 5px 5px;
+    position: absolute;
+    top: 300px;
+    right: 80px;
+    cursor: url(tri.png),pointer;
+    background:rgb(72, 158, 216);
+}
+#out{
+    position: absolute;
+    width: 190px;
+    top: 580px;
+    left: 10px;
+    overflow: hidden;
+}
+#download{
+    background-color: rgb(72, 158, 216);
+    padding: 5px 5px;
+    position: absolute;
+    top: 636px;
+    right: 80px;
+}
+/*@media(min-width: 575.98px){
+    .can{
+        margin-top: 20px;
+        width: 100%;
+        height: 400px;
+    }
+}
+@media(min-width: 767.98px){
+    .can{
+        margin-top: 20px;
+        width: 100%;
+        height: 600px;
+    }
+}
+@media(min-width: 991.98px){
+    .can{
+        margin-top: 20px;
+        width: 100%;
+        height: 800px;
+    }
+}*/
