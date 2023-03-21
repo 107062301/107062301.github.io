@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html land="en">
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HW_01</title>
+    <link href="css/HW.css" rel="stylesheet">
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/9.18.0/firebase-app-compat.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/9.18.0/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/9.18.0/firebase-database-compat.js"></script>
+    <script defer src="/__/firebase/9.18.0/firebase-firestore-compat.js"></script>
+    <script defer src="/__/firebase/9.18.0/firebase-functions-compat.js"></script>
+    <script defer src="/__/firebase/9.18.0/firebase-messaging-compat.js"></script>
+    <script defer src="/__/firebase/9.18.0/firebase-storage-compat.js"></script>
+    <script defer src="/__/firebase/9.18.0/firebase-analytics-compat.js"></script>
+    <script defer src="/__/firebase/9.18.0/firebase-remote-config-compat.js"></script>
+    <script defer src="/__/firebase/9.18.0/firebase-performance-compat.js"></script>
+    <!--
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+
+</head>
+<body onload="init()" onkeypress="enter(event)">
+    <div id="message">
+        <h2>Welcome</h2>
+        <h1>Firebase Hosting Setup Complete</h1>
+        <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
+        <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+    </div>
+    <img src="source/ra.jpg" id="d" style="width: 100%;height: 100%;">
+    <div class="can" style="width: 1200px; height: 650px; border-style: solid; border-width: 1px; text-align: center; background-color: #FFFFFF;" onmousedown="md()" onmousemove="mv()" onmouseup="mup()">
+        <canvas id="main" width="1200" height="650">
+        </canvas>
+        <canvas id="tran" width="1200" height="650">
+        </canvas>
+    </div>
+    <div id="toolbar">
+        <button id="pen" onclick="red()" type="button"><img src="source/pen.png" /></button>
+        <button id="era" onclick="blue()" type="button"><img src="source/er.png" /></button>
+        <button id="green" onclick="green()" type="button"><b>Reset</button>
+        <button id="circle" onclick="circle()" type="button"><img src="source/circle.png" /></button>
+        <button id="re" onclick="redo()" type="button"><b>Redo</button>
+        <button id="un" onclick="undo()" type="button"><b>Undo</button>
+        <button id="triangle" onclick="triangle()" type="button"><img src="source/triangle.png" /></button>
+        <button id="text" onclick="tt()" type="button"><img src="source/tex.png" /></button>
+        <button id="rectangle" onclick="rectangle()" type="button"><img src="source/rectangle.png" /></button>
+        <select id="sle" value="8">
+            <option value="8">8</option>
+            <option value="12">12</option>
+            <option value="16">16</option>
+            <option value="20">20</option>
+            <option value="24">24</option>
+            <option value="32">32</option>
+            <option value="48">48</option>
+            <option value="64">64</option>
+            <option value="72">72</option>
+        </select>
+        <div id="f"><b>Font Size</b></div>
+        <select id="sle2" value="Arial">
+            <option value="Arial">Arial</option>
+            <option value="Comic Sans MS">Comic Sans MS</option>
+            <option value="fantasy">fantasy</option>
+        </select>
+        <div id="f2"><b>Font Type</b></div>
+        <a id="do" download="source/picture.png">
+            <button id="download" onclick="download()" type="button"><img src="source/download.png" /></button>
+        </a>
+        <input id="out" type="file" />
+        <div style="-webkit-text-stroke: 1.2px #000;font-size:xx-large; color: coral; width: 50;height: 20; position: absolute; top: 5px;left:20px;">My Canvas</div>
+        <input type="range" id="bar" value="1" min="1" max="50" onmouseup="line()" />
+        <input type="range" id="bar2" value="1" min="1" max="30" onmouseup="line()" />
+        <input type="color" id="color" onchange="color_s()">
+        <div id="te"><b>粗</div>
+        <div id="xt"><b>細</div>
+        <div id="te1"><b>粗</div>
+        <div id="xt1"><b>細</div>
+        <div id="co"><b>顏色</div>
+    </div>
+    <p id="load">Firebase SDK Loading&hellip;</p>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const loadEl = document.querySelector('#load');
+            // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+            // // The Firebase SDK is initialized and available here!
+            //
+            // firebase.auth().onAuthStateChanged(user => { });
+            // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+            // firebase.firestore().doc('/foo/bar').get().then(() => { });
+            // firebase.functions().httpsCallable('yourFunction')().then(() => { });
+            // firebase.messaging().requestPermission().then(() => { });
+            // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+            // firebase.analytics(); // call to activate
+            // firebase.analytics().logEvent('tutorial_completed');
+            // firebase.performance(); // call to activate
+            //
+            // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+
+            try {
+                let app = firebase.app();
+                let features = [
+                    'auth',
+                    'database',
+                    'firestore',
+                    'functions',
+                    'messaging',
+                    'storage',
+                    'analytics',
+                    'remoteConfig',
+                    'performance',
+                ].filter(feature => typeof app[feature] === 'function');
+                loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
+            } catch (e) {
+                console.error(e);
+                loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
+            }
+        });
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/HW.js"></script>
+</body>
+</html>
